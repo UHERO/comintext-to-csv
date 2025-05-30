@@ -2,6 +2,7 @@
 import argparse
 import difflib
 import os
+import sys
 import pandas as pd
 
 def parse_args():
@@ -97,7 +98,7 @@ if __name__ == "__main__":
 
     if not os.path.isdir(args.data):
         process_file(args.data, ref_file = args.reference, output_file = args.output)
-        exit(0)
+        sys.exit(0)
 
     for file in os.listdir(args.data):
         if file.lower().endswith(".txt"):
