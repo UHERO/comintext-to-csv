@@ -40,5 +40,22 @@ Convert all `.txt` files in a folder. The resulting CSV files will be placed in 
 
 A prebuilt macOS binary is provided. It must be kept in the same directory as the \_internal directory. To mark it as executable, run the following command:
 ```bash
-chmod +x comintext2csv
+chmod +x dist/comintext2csv
 ```
+
+If you want to make this command available in your terminal, run the following command:
+```bash
+echo 'export PATH="$PATH:'"$(realpath dist)"'"' >> ~/.profile
+source ~/.profile
+```
+If you move your directory, this will break.
+
+---
+
+## Windows
+
+You will have to run the `.py` script if you are using Windows.
+
+1. Ensure you have python3 installed
+2. Install the dependencies with `pip install pandas openpyxl`
+3. Run the script with `python comintext2csv.py ...`
